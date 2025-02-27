@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: url("https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXJmMHhrcGIyeWsxanU0bjh4Nm1vcnh4emR1Z2U2NG5wMWlsY3ZwZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UYBDCJjwOd9Re/giphy.gif")
+    no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+.welcome {
+  background: url("imgs/rick-and-morty-icegif-13.gif") no-repeat center center
+    fixed;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+}
+button {
+  display: block;
+  margin: 41% auto;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  background: #043c6e;
+  color: white;
+}
+button:hover {
+  background: #002647;
+}
+#characters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #3c3e44;
+  padding: 10px;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  color: white;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
