@@ -8,19 +8,18 @@ fetch(apiUrlChar)
     return response.json();
   })
   .then((data) => {
-    ShowChar(data.results);
+    document.getElementById("characters").innerHTML = data.results.map(personaje=>`
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <div class="card">
+      <img src="${personaje.image}" alt="${personaje.name}">
+      <h2>${personaje.name}</h2>
+      <p> <strong>Status: ${personaje.status} - Specie: ${personaje.species} - Gender: ${personaje.gender}</strong></p>
+      `).join("");
   })
   .catch((error) => console.log(error));
-function ShowChar(character) {
-  const container = document.getElementById("characters");
-  card.classList.add("card");
-  personajes.forEach((char) => {
-    const card = document.createElement("div");
-    card.innerHTML = `
-  <img src="${char.image}" alt="${char.name}"></img>
-  <h2>${char.name}</h2>
-  <p>${char.status} - ${char.species} - ${char.gender}</p>
-`;
-    container.appendChild(card);
-  });
-}

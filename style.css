@@ -1,3 +1,18 @@
+@font-face {
+    font-family: "RickAndMorty";
+    src: url("assets/fonts/get_schwifty__a_rick_and_morty_font_by_jonizaak_dajw4u8.ttf") format("truetype");
+}
+
+.rick-font {
+  font-family: "RickAndMorty", sans-serif;
+  color: #00BFFF; 
+  text-shadow: 1.2px 1.2px 0px #106d00, 
+              -1px -1.2px 0px #30d812, 
+              1px -1.2px 0px #30d812, 
+              -1px 1.2px 0px #30d812, 
+              0px 1.2px 0px #30d812, 
+              0px -1.2px 0px #30d812; 
+      }
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -6,8 +21,9 @@ body {
   background-size: cover;
   color: white;
 }
+
 .welcome {
-  background: url("imgs/rick-and-morty-icegif-13.gif") no-repeat center center
+  background: url("images/rick-and-morty-icegif-13.gif") no-repeat center center
     fixed;
   background-size: cover;
   align-items: center;
@@ -23,30 +39,207 @@ button {
   border-radius: 12px;
   cursor: pointer;
   border: none;
-  background: #043c6e;
+  background: #1d9612;
   color: white;
 }
 button:hover {
-  background: #002647;
+  background: #116909;
 }
 #characters {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns:max-content;
   justify-content: center;
-  gap: 20px;
+  gap: 100px;
   margin-top: 20px;
 }
-
-.card {
-  background: #3c3e44;
-  padding: 10px;
-  border-radius: 8px;
-  width: 200px;
-  text-align: center;
-  color: white;
-}
-
 .card img {
   width: 100%;
   border-radius: 8px;
+}
+.sidebutton{
+  background: #002647;
+}
+.sidebutton:hover{
+  background: #021f38;
+}
+.header-logo {
+  width: 50px;
+  height: 50px;
+  background: url('/images/portal_logo.gif') no-repeat center center;
+  background-size: contain;
+}
+
+.sidebar {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  border-radius: 16px;
+  background: #002647;
+  height: calc(120vh - 120px);
+  padding: 16px 0;
+  box-sizing: border-box;
+  transition: 0.4s ease;
+}
+.sidebar.collapsed{
+  width: 85px;
+}
+.sidebar-header {
+  display: flex;
+  padding: 25px 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar-header .Portal_logo img{
+  width: 46px;
+  height: 46px;
+  display: block;
+  object-fit: contain;
+  border-radius: 50%;
+}
+.sidebar-header .toggler {
+  height: 35px;
+  width: 35px;
+  border: none;
+  color: #02213b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8px;
+  background: #fff;
+}
+.sidebar-header .toggler:hover{
+  background: #d4c8c8;
+}
+.sidebar-header .toggler span {
+  font-size: 1.75rem;
+}
+.sidebar-nav .nav-list {
+  list-style: none;
+  padding: 0 10px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px; 
+  transform: translateY(5px);
+}
+
+.sidebar-nav .nav-link {
+  color: #fff;
+  padding: 12px 15px;
+  display: flex;
+  gap: 18px; 
+  align-items: center;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.4s ease;
+  width: 100%;
+}
+.sidebar-nav .nav-link:hover{
+  color: #02233f;
+  background: #d4c8c8;
+}
+.sidebar-nav .secondary-nav {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+.sidebar.collapsed .sidebar-nav .nav-link{
+  transition: 0.4s ease;
+}
+.sidebar.collapsed .sidebar-nav .nav-link .nav-label{
+  opacity: 0;
+  pointer-events: none;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #002647;
+  padding: 10px;
+  margin-left: 270px; /* Mueve la barra de búsqueda a la derecha de la sidebar */
+  width: calc(100% - 300px); /* Evita que se sobreponga con la sidebar */
+  max-width: 800px;
+  z-index: 15; /* Asegura que la barra de búsqueda esté por encima de la sidebar */
+  position: relative;
+  border-radius: 50px;
+}
+
+.dropdown {
+  position: relative;
+  width: 280px;
+  border-radius: 50px;
+  border: 1px solid white;
+  background-color:#0196aa;
+  z-index: 20; /* Asegura que el dropdown esté visible */
+}
+.dropdown-text{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #d4c8c8;
+  padding: 1rem 1.5rem;
+}
+.dropdown-list {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  width: 25%;
+  background-color:rgb(0, 53, 97);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 15px;
+  max-height: 0;
+  overflow: hidden;
+  z-index: 30;
+  transition: max-height .5s;
+}
+#list.show{
+  max-height: 300px;
+}
+
+.dropdown:hover .dropdown-list {
+  display: block;
+}
+.dropdown-list-item{
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 0 0.5rem 1.2rem;
+  cursor: pointer;
+  transition: margin-left 0.2s ease;
+}
+.dropdown-list-item:hover{
+  margin-left: 0.5rem;
+  color: #116909;
+}
+.search-box{
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1.65rem;
+  width: 100%;
+  color:#002647
+}
+.search-box input{
+  padding: 1rem;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #002647;
+  border: 0;
+  outline:0;
+  border-radius: 50px;
+}
+.search-box i{
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+search-box input::placeholder{
+  font-size: 1rem;
+  font-weight: 500;
+  color: #002647;
 }
