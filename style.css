@@ -1,18 +1,17 @@
 @font-face {
-    font-family: "RickAndMorty";
-    src: url("assets/fonts/get_schwifty__a_rick_and_morty_font_by_jonizaak_dajw4u8.ttf") format("truetype");
+  font-family: "RickAndMorty";
+  src: url("assets/fonts/get_schwifty__a_rick_and_morty_font_by_jonizaak_dajw4u8.ttf")
+    format("truetype");
 }
 
 .rick-font {
   font-family: "RickAndMorty", sans-serif;
-  color: #00BFFF; 
-  text-shadow: 1.2px 1.2px 0px #106d00, 
-              -1px -1.2px 0px #30d812, 
-              1px -1.2px 0px #30d812, 
-              -1px 1.2px 0px #30d812, 
-              0px 1.2px 0px #30d812, 
-              0px -1.2px 0px #30d812; 
-      }
+  color: #00bfff;
+  text-shadow: 1.2px 1.2px 0px #106d00, -1px -1.2px 0px #30d812,
+    1px -1.2px 0px #30d812, -1px 1.2px 0px #30d812, 0px 1.2px 0px #30d812,
+    0px -1.2px 0px #30d812;
+}
+
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -28,15 +27,15 @@ body {
   background-size: cover;
   align-items: center;
   justify-content: center;
-  width: 99vw; 
+  width: 99vw;
   height: 95vh;
   object-fit: cover;
   color: white;
 }
 button {
   display: block;
-  margin: 40% auto;
-  padding: 5px 20px;
+  margin: 58% auto;
+  padding: 15px 20px;
   font-size: 18px;
   border-radius: 12px;
   cursor: pointer;
@@ -49,7 +48,7 @@ button:hover {
 }
 #characters {
   display: grid;
-  grid-template-columns:max-content;
+  grid-template-columns: max-content;
   justify-content: center;
   gap: 100px;
   margin-top: 20px;
@@ -58,16 +57,16 @@ button:hover {
   width: 100%;
   border-radius: 8px;
 }
-.sidebutton{
+.sidebutton {
   background: #002647;
 }
-.sidebutton:hover{
+.sidebutton:hover {
   background: #021f38;
 }
 .header-logo {
   width: 50px;
   height: 50px;
-  background: url('/images/portal_logo.gif') no-repeat center center;
+  background: url("/images/portal_logo.gif") no-repeat center center;
   background-size: contain;
 }
 
@@ -84,7 +83,7 @@ button:hover {
   box-sizing: border-box;
   transition: 0.4s ease;
 }
-.sidebar.collapsed{
+.sidebar.collapsed {
   width: 85px;
 }
 .sidebar-header {
@@ -93,7 +92,7 @@ button:hover {
   align-items: center;
   justify-content: space-between;
 }
-.sidebar-header .Portal_logo img{
+.sidebar-header .Portal_logo img {
   width: 46px;
   height: 46px;
   display: block;
@@ -112,7 +111,7 @@ button:hover {
   border-radius: 8px;
   background: #fff;
 }
-.sidebar-header .toggler:hover{
+.sidebar-header .toggler:hover {
   background: #d4c8c8;
 }
 .sidebar-header .toggler span {
@@ -124,7 +123,7 @@ button:hover {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px; 
+  gap: 6px;
   transform: translateY(5px);
 }
 
@@ -132,14 +131,14 @@ button:hover {
   color: #fff;
   padding: 12px 15px;
   display: flex;
-  gap: 18px; 
+  gap: 18px;
   align-items: center;
   border-radius: 8px;
   text-decoration: none;
   transition: 0.4s ease;
   width: 100%;
 }
-.sidebar-nav .nav-link:hover{
+.sidebar-nav .nav-link:hover {
   color: #02233f;
   background: #d4c8c8;
 }
@@ -148,10 +147,10 @@ button:hover {
   bottom: 20px;
   width: 100%;
 }
-.sidebar.collapsed .sidebar-nav .nav-link{
+.sidebar.collapsed .sidebar-nav .nav-link {
   transition: 0.4s ease;
 }
-.sidebar.collapsed .sidebar-nav .nav-link .nav-label{
+.sidebar.collapsed .sidebar-nav .nav-link .nav-label {
   opacity: 0;
   pointer-events: none;
 }
@@ -160,10 +159,10 @@ button:hover {
   align-items: center;
   background-color: #002647;
   padding: 10px;
-  margin-left: 270px; /* Mueve la barra de búsqueda a la derecha de la sidebar */
-  width: calc(100% - 300px); /* Evita que se sobreponga con la sidebar */
-  max-width: 800px;
-  z-index: 15; /* Asegura que la barra de búsqueda esté por encima de la sidebar */
+  margin-left: 250px;
+  width: calc(100% - 300px);
+  max-width: 550px;
+  z-index: 15;
   position: relative;
   border-radius: 50px;
 }
@@ -173,10 +172,10 @@ button:hover {
   width: 280px;
   border-radius: 50px;
   border: 1px solid white;
-  background-color:#0196aa;
-  z-index: 20; /* Asegura que el dropdown esté visible */
+  background-color: #0196aa;
+  z-index: 20;
 }
-.dropdown-text{
+.dropdown-text {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -190,7 +189,7 @@ button:hover {
   top: 4rem;
   left: 0;
   width: 25%;
-  background-color:rgb(0, 53, 97);
+  background-color: rgb(0, 53, 97);
   list-style: none;
   padding: 0;
   margin: 0;
@@ -198,66 +197,67 @@ button:hover {
   max-height: 0;
   overflow: hidden;
   z-index: 30;
-  transition: max-height .5s;
+  transition: max-height 0.5s;
 }
-#list.show{
+#list.show {
   max-height: 300px;
 }
 
 .dropdown:hover .dropdown-list {
   display: block;
 }
-.dropdown-list-item{
+.dropdown-list-item {
   font-size: 0.9rem;
   font-weight: 500;
   padding: 0.5rem 0 0.5rem 1.2rem;
   cursor: pointer;
   transition: margin-left 0.2s ease;
 }
-.dropdown-list-item:hover{
+.dropdown-list-item:hover {
   margin-left: 0.5rem;
   color: #116909;
 }
-.search-box{
+.search-box {
   display: flex;
   align-items: center;
   padding-left: 1rem;
   padding-right: 1.65rem;
   width: 100%;
-  color:#002647
+  color: #002647;
 }
-.search-box input{
+.search-box input {
   padding: 1rem;
   width: 100%;
   font-size: 1rem;
   font-weight: 500;
   color: #002647;
   border: 0;
-  outline:0;
+  outline: 0;
   border-radius: 50px;
 }
-.search-box i{
+.search-box i {
   font-size: 1.3rem;
   cursor: pointer;
 }
-search-box input::placeholder{
+search-box input::placeholder {
   font-size: 1rem;
   font-weight: 500;
   color: #002647;
 }
 
 #pickle-rotate {
-  width: 100vw; 
+  width: 100vw;
   height: 100vh;
   object-fit: cover;
-  position: fixed; 
-  top: 0;  
-  left: 0; 
-  z-index: -1; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 footer {
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   text-align: center;
   padding: 4.2px;
   color: white;
